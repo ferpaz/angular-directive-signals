@@ -1,1 +1,23 @@
-<p>user-info-page works!</p>
+<h1>Información del Usuario</h1>
+<hr>
+
+<div class="row">
+  <div class="col-4">
+    <h3>Usuario Actual: {{ userId() }}</h3>
+
+    <button class="btn btn-primary" (click)="getUserInfo(this.userId() - 1)">Anterior</button>
+    &nbsp;
+    <button class="btn btn-primary" (click)="getUserInfo(this.userId() + 1)">Siguiente</button>
+  </div>
+
+  <div class="col-8">
+    <h3>Usuario: {{ userInfo()?.id }}</h3>
+    <p>Nombre: {{ fullUsername() }}</p>
+    @if (userInfo() != null && userInfo()?.email != null) {
+      <p>Correo: {{ userInfo()?.email }}</p>
+    }
+    @if (userInfo() != null && userInfo()?.avatar != null) {
+      <img src="{{ userInfo()?.avatar}}" alt="Avatar" class="img-thumbnail">
+    }
+  </div>
+</div>
