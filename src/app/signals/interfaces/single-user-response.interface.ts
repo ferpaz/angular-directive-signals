@@ -4,11 +4,11 @@ export interface SingleUserResponse {
 }
 
 export interface User {
-  id:         number;
-  email:      string;
-  first_name: string;
-  last_name:  string;
-  avatar:     string;
+  id?:         string | undefined;
+  email?:      string | undefined;
+  first_name?: string | undefined;
+  last_name?:  string | undefined;
+  avatar?:     string | undefined;
 }
 
 export interface Support {
